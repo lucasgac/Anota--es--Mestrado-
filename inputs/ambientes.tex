@@ -1,0 +1,122 @@
+\newtcolorbox{demo}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor5} \textit{\textbf{Demonstração.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false
+}
+
+\newtcolorbox{prop}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    boxrule = 2pt,
+    colback = white,
+    colframe = cor1,
+    coltitle = cor2,
+    sharp corners,
+    title = {\bfseries\large Proposição \stepcounter{princount}\theprincount\phantom{ }#1},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newtcolorbox{teo}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    boxrule = 2pt,
+    colback = white,
+    colframe = cor3,
+    coltitle = cor2,
+    sharp corners,
+    parbox = false,
+    title = {\bfseries\large Teorema \stepcounter{princount}\theprincount\phantom{ }#1},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newtcolorbox{cor}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    boxrule = 2pt,
+    colback = white,
+    colframe = cor4,
+    coltitle = cor2,
+    sharp corners,
+    title = {\bfseries\large Corolário \stepcounter{princount}\theprincount\phantom{ }#1},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newtcolorbox{lema}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    boxrule = 2pt,
+    colback = white,
+    colframe = cor5,
+    coltitle = cor2,
+    sharp corners,
+    title = {\bfseries\large Lema \stepcounter{princount}\theprincount\phantom{ }#1},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newtcolorbox{exemplo}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    colback = cor1!25,
+    coltitle = cor5,
+    frame hidden,
+    sharp corners,
+    title = {\bfseries\large Exemplo \stepcounter{princount}\theprincount\phantom{ }#1},
+    borderline north = {1pt}{0pt}{cor5},
+    borderline south = {1pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newtcolorbox{exercicio}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    colback = cor1!25,
+    coltitle = cor5,
+    frame hidden,
+    sharp corners,
+    title = {\bfseries\large Exercicio \stepcounter{execcount}\theexeccount},
+    borderline north = {1pt}{0pt}{cor5},
+    borderline south = {1pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt
+}
+
+\newlist{itens}{enumerate}{1}
+\setlist[itens,1]{
+    labelsep = 0 cm,
+    leftmargin = 0 cm,
+    itemindent = 0.85 cm,
+    label = {\fontsize{12}{12}\selectfont\bfseries(\alph*)\phantom{..}}
+}

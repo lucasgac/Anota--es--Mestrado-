@@ -1,0 +1,120 @@
+% Classe do documento
+\documentclass{book}
+
+% Lidar com acentuação em PT-BR e traduções
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+
+\usepackage[a4paper, total={6.5in, 10in}]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{babel,arrows,positioning,chains,matrix,scopes,cd,quotes,calc,decorations.pathmorphing}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{csquotes}
+\usepackage{algorithmic}
+\usepackage[portuguese, ruled, lined]{algorithm2e}
+\usepackage{bbm}
+\usepackage{xparse}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{mathtools}
+\usepackage{tikz-cd}
+
+\setlength{\parskip}{0.5\baselineskip}
+\setlength{\parindent}{\baselineskip}
+
+\usepackage{mathpazo}
+
+\makeatletter
+\newcommand{\globalcolor}[1]{%
+  \color{#1}\global\let\default@color\current@color
+}
+\makeatother
+
+\DeclarePairedDelimiterX{\set}[1]{\{}{\}}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}
+{\setargsaux#1}
+\NewDocumentCommand{\setargsaux}{mm}
+{\IfNoValueTF{#2}{#1} {#1\nonscript\:\delimsize\vert\allowbreak\nonscript\:\mathopen{}#2}}%
+\def\Set{\set*}%
+
+%quiver
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+        \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+% TikZ arrowhead/tail styles.
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+% TikZ arrow styles.
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\highlight}[1]{{\color{red} #1}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\DeclareMathOperator{\ArithmeticMod}{mod}
+\newcommand{\modulus}[1]{\phantom{.}(\ArithmeticMod\phantom{.}#1)}
+
+\newcommand{\Mod}[1]{$\module_{#1}$}
+\newcommand{\Chain}[1]{$\chain(#1)$}
+
+\newcommand{\openset}[0]{{\phantom{}\subset}{\circ}\phantom{.}}
+
+\newcommand{\cat}[1]{\operatorname{#1}}
+
+\def\arrvline{\hfil\kern\arraycolsep\vline\kern-\arraycolsep\hfilneg}
+
+\DeclareMathOperator{\im}{im}
+
+\definecolor{cor1}{RGB}{22, 32, 37}
+\definecolor{cor2}{RGB}{242, 244, 243}
+\definecolor{cor3}{RGB}{169, 146, 125}
+\definecolor{cor4}{RGB}{34, 51, 59}
+\definecolor{cor5}{RGB}{94, 80, 63}
+
+\newcounter{princount}
+\newcounter{execcount}
+
+\newcommand{\defi}[1]{{\color{cor5} \textbf{\textit{#1}}}}
+
+\input{inputs/ambientes.tex}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\input{inputs/capa.tex}
+
+\tableofcontents
+
+\setcounter{page}{0}
+\pagenumbering{arabic}
+
+\chapter{Grupo Fundamental e Espaços de Recobrimento}
+
+\chapter{Topologia Algébrica}
+
+\chapter{Álgebra Homológica}
+
+\input{capitulos/homologica.tex}
+
+\end{document}
