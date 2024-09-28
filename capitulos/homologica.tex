@@ -26,9 +26,27 @@ Dada uma categoria $\mathcal{C}$, definimos o \defi{funtor identidade} $\mathbbm
 
 Diremos que duas categorias $\mathcal{C}$ e $\mathcal{D}$ são \defi{isomorfas} se existe um \defi{isomorfismo} de categorias entre elas, isso é, um funtor $F \colon \mathcal{C} \to \mathcal{D}$ tal que existe um outro funtor $G \colon \mathcal{D} \to \mathcal{C}$ de maneira que $F \circ G = \mathbbm{1}_\mathcal{D}$ e $G \circ F = \mathbbm{1}_A$.
 
-Diremos que duas categorias $\mathcal{C}$ e $\mathcal{D}$ são \defi{equivalentes} se existe uma \defi{equivalência} de categorias entre elas, isso é, um funtor $F \colon \mathcal{C} \to \mathcal{D}$ tal que existe um outro funtor $G \colon \mathcal{D} \to \mathcal{C}$ de maneira que existem transformações naturais $\eta \colon F \circ G \to \mathbbm{1}_\mathcal{D}$ e $\lambda \colon G \circ F \to \mathbbm{1}_A$.
+Dadas duas categorias $\mathcal{C}$ e $\mathcal{D}$, três funtores covariantes $F, G, H \colon \mathcal{C} \to \mathcal{D}$ e duas transformações naturais $\eta \colon F \to G$ e $\lambda \colon G \to H$, definimos a \defi{composição} de $\eta$ e $\lambda$ como uma transformação natural $\lambda \circ \eta \colon F \to H$ cuja componente em $A \in \mathcal{C}$ é dada por $(\lambda \circ \eta)_A = \lambda_A \circ \eta_A$. Podemos definir também a \defi{transformação identidade} por $\mathbbm{1}_F \colon F \to F$ cuja componente em $A \in \mathcal{C}$ é $(\mathbbm{1}_F)_A = \mathbbm{1}_{F(A)}$.
 
-Se $\mathcal{C}$ é uma categoria e $A, B \in \mathcal{C}$, então um \defi{produto} de $A$ e $B$ é um outro objeto $C$, geralmente denotado por $A \times B$
+Diremos que dois funtores $F, G \colon \mathcal{C} \to \mathcal{D}$ são \defi{naturalmente isomorfos} se existe um \defi{isomorfismo natural} entre eles, isso é, uma transformação natural $\eta \colon F \to G$ tal que existe uma outra transformação natural $\lambda \colon G \to F$ de maneira que $\lambda \circ \eta = \mathbbm{1}_F$ e $\eta \circ \lambda = \mathbbm{1}_G$.
+
+Diremos que duas categorias $\mathcal{C}$ e $\mathcal{D}$ são \defi{equivalentes} se existe uma \defi{equivalência} de categorias entre elas, isso é, um funtor $F \colon \mathcal{C} \to \mathcal{D}$ tal que existe um outro funtor $G \colon \mathcal{D} \to \mathcal{C}$ de maneira que existem isomorfismos naturais $\eta \colon F \circ G \to \mathbbm{1}_\mathcal{D}$ e $\lambda \colon G \circ F \to \mathbbm{1}_A$.
+
+Se $\mathcal{C}$ é uma categoria e $A, B \in \mathcal{C}$, então um \defi{produto} de $A$ e $B$ é um outro objeto $C$, geralmente denotado por $A \times B$, equipado com um par de morfismos $\pi_A \colon A \times B \to A$ e $\pi_B \colon A \times B \to B$, satisfazendo a seguinte propriedade universal: para cada $D \in \mathcal{C}$ e para cada par de morfismos $f_A \colon D \to A$ e $f_B \colon D \to B$, existe um único morfismo $f \colon D \to A \times B$ tal que o seguinte diagrama é comutativo.
+\begin{center}
+    \begin{tikzcd}
+        & D \arrow[d, "f", dashed] \arrow[ld, "f_A", swap] \arrow[rd, "f_B"] & \\ A & A \times B \arrow[l, "\pi_A"] \arrow[r, "\pi_B", swap] & B
+    \end{tikzcd}
+\end{center}
+A definição pode ser estendida similarmente para uma família finita qualquer de objetos $A_1, \dots, A_n$, produzindo o produto $A_1 \times \cdots \times A_n$.
+
+Se $\mathcal{C}$ é uma categoria e $A, B \in \mathcal{C}$, então um \defi{coproduto} de $A$ e $B$ é um outro objeto $C$, geralmente denotado por $A \oplus B$, equipado com um par de morfismos $i_A \colon A \to A \oplus B$ e $i_B \colon B \to A \oplus B$, satisfazendo a seguinte propriedade universal: para cada $D \in \mathcal{C}$ e para cada par de morfismos $f_A \colon A \to D$ e $f_B \colon B \to D$, existe um único morfismo $f \colon A \oplus B \to D$ tal que o seguinte diagrama é comutativo.
+\begin{center}
+    \begin{tikzcd}
+        & D & \\ A \arrow[r, "i_A", swap] \arrow[ru, "f_A"] & A \oplus B \arrow[u, "f", dashed] & B \arrow[l, "i_B"] \arrow[lu, "f_B", swap]
+    \end{tikzcd}
+\end{center}
+A definição pode ser estendida similarmente para uma família finita qualquer de objetos $A_1, \dots, A_n$, produzindo o produto $A_1 \oplus \cdots \oplus A_n$.
 
 Uma categoria $\mathcal{C}$ é dita \defi{pré-aditiva} se, dados $A, B \in \mathcal{C}$, o conjunto $\cat{Hom}_\mathcal{C}(A,B)$ possui uma operação binária, geralmente denotada por $+$, que faz dele um grupo abeliano, e de maneira que composição de morfismos é bilinear, isso é: dados $A, B, C \in \mathcal{C}$, $f_1, f_2 \colon A \to B$ e $g_1, g_2 \colon B \to C$, temos \begin{equation}
     g_1 \circ (f_1 + f_2) = g_1 \circ f_1 + g_1 \circ f_2 \quad \text{e} \quad (g_1 + g_2) \circ f_1 = g_1 \circ f_1 + g_2 \circ f_1.
@@ -67,3 +85,10 @@ O primeiro passo é notar que complexos em $R\cat{-Mod}$ formam uma categoria. U
 \end{center}
 
 Para cada complexo $C_\bullet$ temos a identidade $\mathbbm{1}_{C_\bullet} \colon C_\bullet \to C_\bullet$ que age identicamente em cada módulo: $(\mathbb{1}_{C_\bullet})_i = \mathbbm{1}_{C_i}$. Além disso, se temos morfismos $f_\bullet \colon C_\bullet \to D_\bullet$ e $g_\bullet \colon D_\bullet \to E_\bullet$ podemos construir a composição $g_\bullet \circ f_\bullet \colon C_\bullet \to E_\bullet$ da maneira esperada: para cada $i \in \mathbb{Z}$, tomamos $(g_\bullet \circ f_\bullet)_i = g_i \circ f_i \colon C_i \to E_i$. Denotamos a categoria dos complexos em $R\cat{-Mod}$ por $\cat{Ch}_\bullet(R\cat{-Mod})$ ou apenas $\cat{Ch}_\bullet$ se o anel estiver entendido do contexto.
+
+\begin{prop}
+    A categoria dos complexos de cadeia é aditiva.
+\end{prop}
+\begin{demo}
+
+\end{demo}

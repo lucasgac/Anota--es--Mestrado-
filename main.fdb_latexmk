@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1727477989.78547 "c:/Users/Lucas/Desktop/Livro/main.tex" "main.pdf" "main" 1727477991.85561 0
+["pdflatex"] 1727566142.16961 "c:/Users/Lucas/Desktop/Livro/main.tex" "main.pdf" "main" 1727566145.14316 0
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1725477569 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/public/bbm/dpi600/bbm10.pk" 1721120666 6984 92fef063cebb620cf3443d0a939b050e ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/tfm/public/bbm/bbm10.tfm" 1721120662 560 39fd35b5e4a6aca3672660cc548ba860 ""
@@ -16,6 +16,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136783054 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplr8t.tfm" 1136783054 3820 ee5b9d58608ae328e43c6e2bfd4ff851 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplri8r.tfm" 1136783054 2720 70000d5e623e601132eab3cded5b819b ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplri8t.tfm" 1136783054 3684 929c666381f7272e81481908b735ccba ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplro8r.tfm" 1136783054 2948 325b50af1ea2702f0a5da8c6a9d8c345 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/adobe/palatino/pplro8t.tfm" 1136783054 3952 a46a759af62d58e257fa10b56830157a ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1000.tfm" 993062122 3148 7e594c8240c71e432203f65ab5f95a51 ""
@@ -252,13 +253,13 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "c:/Users/Lucas/Desktop/Livro/main.tex" 1727475233 3393 6e7a987f321248945efd9317e09273a5 ""
-  "capitulos/homologica.tex" 1727477989 9039 75e913cb198b462e70f03edc63c02803 ""
+  "capitulos/homologica.tex" 1727566139 11752 3339b1194f83e29c454e5f68824a7bf4 ""
   "inputs/ambientes.tex" 1726909255 3063 1bb1b609f247cf201e495fa4c4c4f505 ""
   "inputs/capa.tex" 1724257524 727 67ef35164e37b71a05d91bf9ae9abfd4 ""
-  "main.aux" 1727477991 1238 eb58a13e9f1573efee25df9cb0fe60e2 "pdflatex"
-  "main.out" 1727477991 758 6ad7fe5aa3e273e9a315f52236ac19b8 "pdflatex"
+  "main.aux" 1727566144 1238 eb58a13e9f1573efee25df9cb0fe60e2 "pdflatex"
+  "main.out" 1727566144 758 6ad7fe5aa3e273e9a315f52236ac19b8 "pdflatex"
   "main.tex" 1727475233 3393 6e7a987f321248945efd9317e09273a5 ""
-  "main.toc" 1727477991 421 b66d62c5e9bf095f173f0f384ced5d93 "pdflatex"
+  "main.toc" 1727566144 421 b66d62c5e9bf095f173f0f384ced5d93 "pdflatex"
   (generated)
   "main.aux"
   "main.log"

@@ -505,10 +505,14 @@ INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmmi10.tf
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplr8r.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8r.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplr7t.vf
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8t.tfm
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplri8t.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\vf\public\mathpazo\zplmr7y.vf
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\mathpazo\fplmr.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplr7t.vf
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\vf\adobe\palatino\pplb8t.vf
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\adobe\palatino\pplb8r.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
