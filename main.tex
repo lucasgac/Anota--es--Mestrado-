@@ -74,12 +74,9 @@
 \DeclareMathOperator{\ArithmeticMod}{mod}
 \newcommand{\modulus}[1]{\phantom{.}(\ArithmeticMod\phantom{.}#1)}
 
-\newcommand{\Mod}[1]{$\module_{#1}$}
-\newcommand{\Chain}[1]{$\chain(#1)$}
-
 \newcommand{\openset}[0]{{\phantom{}\subset}{\circ}\phantom{.}}
 
-\newcommand{\cat}[1]{\operatorname{#1}}
+\newcommand{\cat}[1]{\operatorname{\mathbf{#1}}}
 
 \def\arrvline{\hfil\kern\arraycolsep\vline\kern-\arraycolsep\hfilneg}
 
@@ -93,6 +90,8 @@
 
 \newcounter{princount}
 \newcounter{execcount}
+
+\DeclareMathOperator{\Hom}{Hom}
 
 \newcommand{\defi}[1]{{\color{cor5} \textbf{\textit{#1}}}}
 
@@ -109,12 +108,18 @@
 \setcounter{page}{0}
 \pagenumbering{arabic}
 
-\chapter{Grupo Fundamental e Espaços de Recobrimento}
+\chapter{Teoria das Categorias}
 
-\chapter{Topologia Algébrica}
+\input{capitulos/categorias.tex}
 
 \chapter{Álgebra Homológica}
 
 \input{capitulos/homologica.tex}
+
+\chapter{Grupo Fundamental e Espaços de Recobrimento}
+
+\chapter{Teoria de Homotopia}
+
+\chapter{Teoria Geométrica dos Grupos}
 
 \end{document}

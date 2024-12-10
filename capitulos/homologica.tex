@@ -1,60 +1,6 @@
-\section{Categorias}
-
-Essa seção foi construída pelo autor das notas de aula com o intuíto de resumir fatos categóricos relevantes para o estudo de álgebra homológica.
-
-Uma \defi{categoria} é uma classe $\mathcal{C}$, cujos elementos são chamados de \defi{objetos}, de maneira que para cada dois $A, B \in \mathcal{C}$ se associa um conjunto $\cat{Hom}_{\mathcal{C}}(A,B)$, cujos elementos são chamados de \defi{morfismos entre $A$ e $B$}. Se $f \in \cat{Hom}_\mathcal{C}(A,B)$, escrevemos $f \colon A \to B$. Pedimos que morfismos satisfaçam as seguintes condições: \begin{itemize}
-    \item dados $A, B, C \in \mathcal{C}$, deve existir uma operação de composição $\circ$ que, dados $f \colon A \to B$ e $g \colon B \to C$ produz um morfismo $g \circ f \colon A \to C$;
-    \item dado $A \in \mathcal{C}$ deve existir um morfismo $\mathbbm{1}_A \colon A \to A$ tal que para todos $B \in \mathcal{C}$, $f \colon A \to B$ e $g \colon B \to A$ temos \begin{equation}
-        f \circ \mathbbm{1}_A = f \quad \text{e} \quad \mathbbm{1}_A \circ g = g;
-    \end{equation}
-    \item dados $A, B, C, D \in \mathcal{C}$, $f \colon A \to B$, $g \colon B \to C$ e $h \colon C \to D$, devemos ter \begin{equation}
-        (h \circ g) \circ f = h \circ (g \circ f).
-    \end{equation}
-\end{itemize}
-
-Um \defi{funtor covariante} entre duas categorias $\mathcal{C}$ e $\mathcal{D}$, denotado por $F \colon \mathcal{C} \to \mathcal{D}$. é uma associação, para cada $A \in \mathcal{C}$ de um objeto $F(A) \in \mathcal{C}$, e para cada $f \colon A \to B$, de um morfismo $F(f) \colon F(A) \to F(B)$, de maneira que $F(\mathbbm{1}_A) = \mathbb{1}_{F(A)}$ e $F(f \circ g) = F(f) \circ F(g)$. Um \defi{funtor contravariante} é definido da mesma maneira, mas para cada $f \colon A \to B$ o funtor produz um morfismo $F(f) \colon F(B) \to F(A)$ e a regra de composição é dada por $F(f \circ g) = F(g) \circ F(f)$.
-
-Uma \defi{transformação natural} entre dois funtores covariantes $F, G \colon \mathcal{C} \to \mathcal{C}$, denotada por $\eta \colon F \to G$, é uma associação, para cada objeto $A \in \mathcal{C}$, de um morfismo $\eta_A \colon F(A) \to G(A)$, de maneira que dados $f, g \colon A \to B$ (com $A, B \in \mathcal{C}$), o diagrama abaixo comuta.
-\begin{center}
-    \begin{tikzcd}
-        F(A) \arrow[d, "\eta_A"] \arrow[r, "F(f)"] & F(B) \arrow[d, "\eta_B"] \\ G(A) \arrow[r, "G(f)"] & G(B)
-    \end{tikzcd}
-\end{center}
-Uma transformação natural entre funtores contravariantes pode ser definida de maneira similar.
-
-Dada uma categoria $\mathcal{C}$, definimos o \defi{funtor identidade} $\mathbbm{1}_\mathcal{C}$ por $\mathbbm{1}_\mathcal{C}(A) = A$ e $\mathbbm{1}_\mathcal{C}(f) = f$ para quaisquer $A, B \in \mathcal{C}$ e $f \colon A \to B$. Dadas categorias $\mathcal{C}, \mathcal{D}$ e $\mathcal{E}$ e funtores $F \colon \mathcal{C} \to \mathcal{D}$ e $G \colon \mathcal{D} \to \mathcal{E}$, podemos definir a sua \defi{composição} como o funtor $G \circ F \colon \mathcal{C} \to \mathcal{E}$ dado por $(G \circ F)(A) = G(F(A))$ e $(G \circ F)(f) = G(F(f))$.
-
-Diremos que duas categorias $\mathcal{C}$ e $\mathcal{D}$ são \defi{isomorfas} se existe um \defi{isomorfismo} de categorias entre elas, isso é, um funtor $F \colon \mathcal{C} \to \mathcal{D}$ tal que existe um outro funtor $G \colon \mathcal{D} \to \mathcal{C}$ de maneira que $F \circ G = \mathbbm{1}_\mathcal{D}$ e $G \circ F = \mathbbm{1}_A$.
-
-Dadas duas categorias $\mathcal{C}$ e $\mathcal{D}$, três funtores covariantes $F, G, H \colon \mathcal{C} \to \mathcal{D}$ e duas transformações naturais $\eta \colon F \to G$ e $\lambda \colon G \to H$, definimos a \defi{composição} de $\eta$ e $\lambda$ como uma transformação natural $\lambda \circ \eta \colon F \to H$ cuja componente em $A \in \mathcal{C}$ é dada por $(\lambda \circ \eta)_A = \lambda_A \circ \eta_A$. Podemos definir também a \defi{transformação identidade} por $\mathbbm{1}_F \colon F \to F$ cuja componente em $A \in \mathcal{C}$ é $(\mathbbm{1}_F)_A = \mathbbm{1}_{F(A)}$.
-
-Diremos que dois funtores $F, G \colon \mathcal{C} \to \mathcal{D}$ são \defi{naturalmente isomorfos} se existe um \defi{isomorfismo natural} entre eles, isso é, uma transformação natural $\eta \colon F \to G$ tal que existe uma outra transformação natural $\lambda \colon G \to F$ de maneira que $\lambda \circ \eta = \mathbbm{1}_F$ e $\eta \circ \lambda = \mathbbm{1}_G$.
-
-Diremos que duas categorias $\mathcal{C}$ e $\mathcal{D}$ são \defi{equivalentes} se existe uma \defi{equivalência} de categorias entre elas, isso é, um funtor $F \colon \mathcal{C} \to \mathcal{D}$ tal que existe um outro funtor $G \colon \mathcal{D} \to \mathcal{C}$ de maneira que existem isomorfismos naturais $\eta \colon F \circ G \to \mathbbm{1}_\mathcal{D}$ e $\lambda \colon G \circ F \to \mathbbm{1}_A$.
-
-Se $\mathcal{C}$ é uma categoria e $A, B \in \mathcal{C}$, então um \defi{produto} de $A$ e $B$ é um outro objeto $C$, geralmente denotado por $A \times B$, equipado com um par de morfismos $\pi_A \colon A \times B \to A$ e $\pi_B \colon A \times B \to B$, satisfazendo a seguinte propriedade universal: para cada $D \in \mathcal{C}$ e para cada par de morfismos $f_A \colon D \to A$ e $f_B \colon D \to B$, existe um único morfismo $f \colon D \to A \times B$ tal que o seguinte diagrama é comutativo.
-\begin{center}
-    \begin{tikzcd}
-        & D \arrow[d, "f", dashed] \arrow[ld, "f_A", swap] \arrow[rd, "f_B"] & \\ A & A \times B \arrow[l, "\pi_A"] \arrow[r, "\pi_B", swap] & B
-    \end{tikzcd}
-\end{center}
-A definição pode ser estendida similarmente para uma família finita qualquer de objetos $A_1, \dots, A_n$, produzindo o produto $A_1 \times \cdots \times A_n$.
-
-Se $\mathcal{C}$ é uma categoria e $A, B \in \mathcal{C}$, então um \defi{coproduto} de $A$ e $B$ é um outro objeto $C$, geralmente denotado por $A \oplus B$, equipado com um par de morfismos $i_A \colon A \to A \oplus B$ e $i_B \colon B \to A \oplus B$, satisfazendo a seguinte propriedade universal: para cada $D \in \mathcal{C}$ e para cada par de morfismos $f_A \colon A \to D$ e $f_B \colon B \to D$, existe um único morfismo $f \colon A \oplus B \to D$ tal que o seguinte diagrama é comutativo.
-\begin{center}
-    \begin{tikzcd}
-        & D & \\ A \arrow[r, "i_A", swap] \arrow[ru, "f_A"] & A \oplus B \arrow[u, "f", dashed] & B \arrow[l, "i_B"] \arrow[lu, "f_B", swap]
-    \end{tikzcd}
-\end{center}
-A definição pode ser estendida similarmente para uma família finita qualquer de objetos $A_1, \dots, A_n$, produzindo o produto $A_1 \oplus \cdots \oplus A_n$.
-
-Uma categoria $\mathcal{C}$ é dita \defi{pré-aditiva} se, dados $A, B \in \mathcal{C}$, o conjunto $\cat{Hom}_\mathcal{C}(A,B)$ possui uma operação binária, geralmente denotada por $+$, que faz dele um grupo abeliano, e de maneira que composição de morfismos é bilinear, isso é: dados $A, B, C \in \mathcal{C}$, $f_1, f_2 \colon A \to B$ e $g_1, g_2 \colon B \to C$, temos \begin{equation}
-    g_1 \circ (f_1 + f_2) = g_1 \circ f_1 + g_1 \circ f_2 \quad \text{e} \quad (g_1 + g_2) \circ f_1 = g_1 \circ f_1 + g_2 \circ f_1.
-\end{equation}
-
 \section{Aula 01}
 
-A referência principal do curso será o texto "Introduction to Homological Algebra" de Charles Weibel. O objetivo da primeira aula é dar algumas definições e lembrar certos conceitos categóricos.
+A referência principal do curso será o texto ``Introduction to Homological Algebra'' de Charles Weibel. O objetivo da primeira aula é dar algumas definições e lembrar certos conceitos categóricos.
 
 Começamos com um anel $R$, que para todos os propósitos pode ser comutativo dependendo do objetivo do aluno, mas que por agora é apenas associativo e com unidade. Nos preocuparemos, ao longo do curso, com a categoria $R\cat{-Mod}$ dos módulos de $R$ à esquerda, isso é, dos grupos abelianos $(M, +)$ equipados de uma ação de $R$ à esquerda \begin{equation}
     \begin{split}
@@ -62,13 +8,13 @@ Começamos com um anel $R$, que para todos os propósitos pode ser comutativo de
     \end{split},
 \end{equation} isso é, um morfismo de anéis $R \to \cat{End}(M)$ (note que $\cat{End}(M)$ possui estrutura de anel com a soma $(f + g)(x) = f(x) + g(x)$). É importante notar que as categorias $R\cat{-Mod}$ e $\cat{Mod-}R$ (dos módulos à esquerda) não são necessariamente equivalentes (mas podem ser, caso $R$ seja comutativo, ou possua uma involução).
 
-Assume-se que o estudante já tem conhecimento da teoria de módulos sobre anéis. O objeto de interesse desse curso será a categoria dos complexos de cadeias. Um \defi{complexo de cadeias} em $R\cat{-Mod}$ é uma sequência $C_\bullet = \{C_i\}_{i \in \mathbb{Z}} \subset R\cat{-Mod}$ junto com uma coleção de morfismos de módulos $d = \{d_i \colon C_i \to C_{i-1}\}_{i \in \mathbb{Z}}$ tal que $d^2 = 0$, isso é, tal que para cada $i \in \mathbb{Z}$ a composição $d_{i - 1} \circ d_i \colon C_i \to C_{i - 2}$ é o mapa nulo. Equivalentemente, podemos pedir que $\im d_i \subset \ker d_{i - 1}$ para todo $i \in \mathbb{Z}$.
+Assume-se que o estudante já tem conhecimento da teoria de módulos sobre anéis. O objeto de interesse desse curso será a categoria dos complexos de cadeias. Um \defi{complexo de cadeias} em $R\cat{-Mod}$ é uma sequência $C_\bullet = \{C_i\}_{i \in \mathbb{Z}} \subset R\cat{-Mod}$ junto com uma coleção de morfismos de módulos $d_\bullet = \{d_i \colon C_i \to C_{i-1}\}_{i \in \mathbb{Z}}$, que chamaremos de \defi{mapas de bordo}, tal que $d_\bullet^2 = 0$, isso é, tal que para cada $i \in \mathbb{Z}$ a composição $d_{i - 1} \circ d_i \colon C_i \to C_{i - 2}$ é o mapa nulo. Equivalentemente, podemos pedir que $\im d_i \subset \ker d_{i - 1}$ para todo $i \in \mathbb{Z}$.
 
 Os \defi{módulos de homologia} de $C_\bullet$ são definidos, para cada $i \in \mathbb{Z}$, por \begin{equation}
     H_i(C_\bullet) = \frac{\ker d_i}{\im d_{i+1}}.
 \end{equation} Geralmente denotamos $\ker d_i$ por $Z_i(C_\bullet)$, que é o módulo das \defi{$i$-cadeias de $C_\bullet$}, e denotamos $\im d_{i+1}$ por $B_i(C_\bullet)$, que é o módulo dos \defi{$i$-bordos de $C_\bullet$}.
 
-Podemos considerar também o conceito dual: um \defi{complexo de cocadeias} em $R\cat{-Mod}$ é uma sequência $C^\bullet = \{C^i\}_{i \in \mathbb{Z}} \subset R\cat{-Mod}$ junto com uma coleção de morfismos de módulos $d = \{d^i \colon C^i \to C^{i + 1}\}$ tal que $d^2 = 0$, isso é, tal que para cada $i \in \mathbb{Z}$ a composição $d^{i + 1} \circ d^i \colon C^i \to C^{i + 2}$ é o mapa nulo. Equivalentemente, podemos pedir que $\im d^i \subset \ker d^{i + 1}$ para todo $i \in \mathbb{Z}$.
+Podemos considerar também o conceito dual: um \defi{complexo de cocadeias} em $R\cat{-Mod}$ é uma sequência $C^\bullet = \{C^i\}_{i \in \mathbb{Z}} \subset R\cat{-Mod}$ junto com uma coleção de morfismos de módulos $d^\bullet = \{d^i \colon C^i \to C^{i + 1}\}$, que chamaremos de \defi{mapas de cobordo}, tal que $(d^\bullet)^2 = 0$, isso é, tal que para cada $i \in \mathbb{Z}$ a composição $d^{i + 1} \circ d^i \colon C^i \to C^{i + 2}$ é o mapa nulo. Equivalentemente, podemos pedir que $\im d^i \subset \ker d^{i + 1}$ para todo $i \in \mathbb{Z}$.
 
 Os \defi{módulos de cohomologia} de $C^\bullet$ são definidos, para cada $i \in \mathbb{Z}$, por \begin{equation}
     H^i(C^\bullet) = \frac{\ker d^i}{\im d^{i - 1}}.
@@ -80,15 +26,70 @@ O primeiro passo é notar que complexos em $R\cat{-Mod}$ formam uma categoria. U
 
 \begin{center}
     \begin{tikzcd}
-        C_i \arrow[d, "f_i"] \arrow[r, "d_i"] & C_{i - 1} \arrow[d, "f_{i - 1}"] \\ D_i \arrow[r, "d_i"] & D_{i - 1}
+        C_i \arrow[dd, "f_i", swap] \arrow[rr, "d_i"] & & C_{i - 1} \arrow[dd, "f_{i - 1}"] \\ \\ D_i \arrow[rr, "d_i", swap] & & D_{i - 1}
     \end{tikzcd}
 \end{center}
 
 Para cada complexo $C_\bullet$ temos a identidade $\mathbbm{1}_{C_\bullet} \colon C_\bullet \to C_\bullet$ que age identicamente em cada módulo: $(\mathbb{1}_{C_\bullet})_i = \mathbbm{1}_{C_i}$. Além disso, se temos morfismos $f_\bullet \colon C_\bullet \to D_\bullet$ e $g_\bullet \colon D_\bullet \to E_\bullet$ podemos construir a composição $g_\bullet \circ f_\bullet \colon C_\bullet \to E_\bullet$ da maneira esperada: para cada $i \in \mathbb{Z}$, tomamos $(g_\bullet \circ f_\bullet)_i = g_i \circ f_i \colon C_i \to E_i$. Denotamos a categoria dos complexos em $R\cat{-Mod}$ por $\cat{Ch}_\bullet(R\cat{-Mod})$ ou apenas $\cat{Ch}_\bullet$ se o anel estiver entendido do contexto.
 
-\begin{prop}
+\begin{lema}
     A categoria dos complexos de cadeia é aditiva.
-\end{prop}
-\begin{demo}
+\end{lema}
+\begin{demolema}
+    Primeiro, provaremos que ela é pré-aditiva. Se $C_\bullet$ e $D_\bullet$ são dois complexos de cadeia, considere dois morfismos $f_\bullet, g_\bullet \colon C_\bullet \to D_\bullet$. Para cada $i \in \mathbb{Z}$ temos então morfismos de $R$-módulos $f_i, g_i \colon C_i \to D_i$. Definimos então $f_\bullet + g_\bullet \colon C_\bullet \to D_\bullet$ como a coleção dos mapas $f_i + g_i \colon C_i \to D_i$. Primeiro, veja que $f_\bullet + g_\bullet$ é morfismo de cadeias, afinal, se $i \in \mathbb{Z}$ temos \begin{align}
+        (f_{i - 1} + g_{i - 1})(d_i(x)) &= f_{i -1}(d_i(x)) + g_{i - 1}(d_i(x)) \\ &= d_i(f_i(x)) + d_i(g_i(x)) = d_i((f_i + g_i)(x)),
+    \end{align} o que é equivalente a dizer que o diagrama abaixo comuta.
 
-\end{demo}
+    \begin{center}
+        \begin{tikzcd}
+            C_i \arrow[rr, "d_i"] \arrow[dd, "f_i + g_i", swap] & & C_{i - 1} \arrow[dd, "f_{i-1} + g_{i-1}"] \\ \\ D_i \arrow[rr, "d_i", swap] & & D_{i - 1}
+        \end{tikzcd}
+    \end{center}
+
+    Agora, note que essa operação da estrutura de grupo abeliano para o conjunto dos morfismos, já que ela depende exclusivamente da operação de soma dos módulos, e os módulos são grupos abelianos aditivos.
+
+    O próximo passo é mostrar que produtos finitos existem. Primeiro, precisamos mostrar a existência de um objeto final, que é o produto vazio. Considere a cadeia $0_\bullet$, que é dada pela coleção de objetos $0_i = 0$ para cada $i \in \mathbb{Z}$ (onde $0$ é o módulo trivial) e $d_i \colon 0_i \to 0_{i - 1}$ é o mapa trivial também para cada $i \in \mathbb{Z}$. Note que para outro complexo $C_\bullet$, temos o morfismo $0_\bullet \colon C_\bullet \to 0_\bullet$ que é dado, para cada $i \in \mathbb{Z}$, por $0_i \colon C_i \to 0$ (que obrigatoriamente é o mapa constante). Note que $0_\bullet$ é um morfismo, pois \begin{equation}
+        0_{i - 1}(d_i(x)) = 0 = d_i(0) = d_i(0_i(x)),
+    \end{equation} o que equivale a dizer que o diagrama abaixo comuta.
+
+    \begin{center}
+        \begin{tikzcd}
+            C_i \arrow[rr, "d_i"] \arrow[dd, "0_i", swap] & & C_{i - 1} \arrow[dd, "0_{i-1}"] \\ \\ 0 \arrow[rr, "d_i", swap] & & 0
+        \end{tikzcd}
+    \end{center}
+
+    Como as componentes $0_i$ são unicamente definidas, o morfismo $0_\bullet$ também é único e portanto o objeto $0_\bullet$ é final.
+
+    Agora, considere uma família $C^1_\bullet, \dots, C^n_\bullet$ de complexos, com mapas de bordo $d_\bullet^1, \dots, d_\bullet^n$. Definimos então o produto $D_\bullet = C^1_\bullet \times \cdots \times C^n_\bullet$ de maneira que, para cada $i$, temos \begin{equation}
+        D_i = C^1_i \times \cdots \times C^n_i
+    \end{equation} e também o mapa de bordo \begin{equation}
+        \begin{split}
+            d_i = d^1_i \times \cdots \times d^n_i \colon D_i &\to D_{i - 1} \\ (x_1, \dots, x_n) &\mapsto (d^1_i(x_1), \dots, d^n_i(x_n))
+        \end{split}.
+    \end{equation} Note que temos também as projeções $\pi^1_\bullet, \dots, \pi^n_\bullet$ dadas por \begin{equation}
+        \begin{split}
+            \pi^j_i \colon C^1_i \times \cdots \times C^n_i &\to C^j_i \\ (x_1, \dots, x_n) &\mapsto x_j
+        \end{split}
+    \end{equation} Considere agora outro objeto $E_\bullet$ com morfismos $f^j_\bullet \colon E_\bullet \to C^j_\bullet$ para $j = 1, \dots, n$. Queremos definir um morfismo $f_\bullet \colon E_\bullet \to D_\bullet$ de maneira que $\pi^j_\bullet \circ f_\bullet = f^j_\bullet$ para cada $j = 1, \dots, n$, ou seja, para cada $i \in \mathbb{Z}$, queremos $\pi^j_i \circ f_i = f^j_i$, o que nos obriga a definir $f_\bullet = (f^1_\bullet, \dots, f^n_\bullet)$.
+    
+    Vamos mostrar que $f_\bullet$ é morfismo. Primeiro, como cada $f^j_\bullet$ é morfismo, temos $f^j_{i - 1}(d_i(x)) = d^j_i(f^j_i(x))$. Dessa forma, segue que \begin{align}
+        f_{i - 1}(d_i(x)) &= (f^1_{i-1}(d_i(x)), \dots, f^n_{i - 1}(d_i(x))) \\ &= (d^1_i(f^1_i(x)), \dots, d^n_i(f^n_i(x))) \\ &= d_i(f^1_i(x), \dots, f^n_i(x)) = d_i(f_i(x)).
+    \end{align} Temos então que $f_\bullet$ é morfismo, satisfaz $\pi^j_\bullet \circ f_\bullet = f^j_\bullet$ e é único por definição. Segue que a categoria $\cat{Ch}_\bullet$ possui produtos e portanto é aditiva.
+\end{demolema}
+
+\begin{lema}
+    A categoria dos complexos é abeliana.
+\end{lema}
+\begin{demolema}
+    Já sabemos que a categoria é aditiva, portanto vamos provar que ela é pré-abeliana. Dado um morfismo $f_\bullet \colon C_\bullet \to D_\bullet$, podemos definir $\ker f_\bullet$ como o simplexo dado por \begin{equation}
+        (\ker f_\bullet)_i = \ker f_i \quad \text{e} \quad d_i = d^C_i|_{\ker f_i}.
+    \end{equation} Esse complexo está bem definido pois $d^C_i(\ker f_i) \subset \ker f_{i - 1}$. De fato, como $f_\bullet$ é morfismo, se $x \in \ker f_i$ temos \begin{equation}
+        f_{i-1}(d^C_i(x)) = d^D_i(f_i(x)) = d^D_i(0) = 0.
+    \end{equation} É razoável checar que esse complexo satisfaz a definição de núcleo.
+
+    Da mesma maneira definimos conúcleos. O complexo $\cat{coker} f_\bullet$ é dado por \begin{equation}
+        (\cat{coker} f_\bullet)_i = \cat{coker} f_i = \frac{D_i}{\im f_{i+1}} \quad \text{e} \quad d_i(x + \im f_{i+1}) = d^D_i(x) + \im f_i.
+    \end{equation} Note que esse complexo está bem definido pois se $x + \im f_{i + 1} = y + \im f_{i + 1}$ então $x - y \in \im f_{i + 1}$, dessa maneira existe $z \in D_{i + 1}$ com $f_{i+1}(z) = x - y$. Dessa forma, \begin{equation}
+        d^D_i(x - y) = d^D_i(f_{i + 1}(z)) = f_i(d^C_i(z)) \in \im f_i,
+    \end{equation} portanto $d^D_i(x) + \im f_i = d^D_i(y) + \im f_i$ e o complexo está bem definido. É razoável checar que esse complexo satisfaz a definição de conúcleo.
+\end{demolema}

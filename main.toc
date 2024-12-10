@@ -1,6 +1,9 @@
 \babel@toc {brazilian}{}\relax 
-\contentsline {chapter}{\numberline {1}Grupo Fundamental e Espaços de Recobrimento}{3}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Topologia Algébrica}{5}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Álgebra Homológica}{7}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Categorias}{7}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Aula 01}{8}{section.3.2}%
+\contentsline {chapter}{\numberline {1}Teoria das Categorias}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Aula 01}{3}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Aula 02}{6}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Álgebra Homológica}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Aula 01}{9}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Grupo Fundamental e Espaços de Recobrimento}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Teoria de Homotopia}{15}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Teoria Geométrica dos Grupos}{17}{chapter.5}%

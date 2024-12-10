@@ -1,0 +1,193 @@
+\section{Aula 01}
+
+O principal ponto sobre a teoria das categorias é sua universalidade. É uma teoria importante em diversas áreas da matemática, então é também um ponto de unificação dessas diversas áreas. Este curso trabalhará a teoria das categorias sobre o ponto de vista de que categorias são uma teoria por si só, e ao longo do curso iremos enfatizar suas conexões com áreas diferentes da matemática. Em particular, computação, mas abordaremos também relações com álgebra, análise, matemática discreta, topologia e diversas outras.
+
+Teoria das categorias, ao longo dos anos, se tornou uma área extremamente ampla, mas grande parte dos estudiosos dessa disciplina concordam em quais os principais tópicos, que juntos formam o núcleo da área, são. Esses tópicos estão todos inclusos no livro clássico de Mac Lane, "Categories for the Working Mathematician", e são também os tópicos que esse curso focará em cobrir.
+
+O foco principal do curso será a relação de teoria das categorias com outras áreas da matemática. O problema com isso é que é quase certo que nem todos os leitores irão ter os requisitos necessários para entender todos os exemplos. Porém, não temam! O importante é que cada leitor entenda uma quantidade suficiente de exemplos para que os conceitos abstratos se tornem naturais, e isso de maneira alguma envolve entender TODOS os exemplos.
+
+\begin{definicao}
+    Uma \defi{categoria} $\mathcal{C}$ é uma estrutura matemática, dada por: \begin{itemize}
+        \item uma classe (denotada também por $\mathcal{C}$), cujos elementos são chamados de \defi{objetos};
+        \item para cada $A, B \in \mathcal{C}$, uma classe $\Hom_{\mathcal{C}}(A,B)$ cujos elementos são chamados se \defi{morfismos} entre $A$ e $B$. Se a categoria é entendida do contexto, denotamos essa classe por $\Hom(A,B)$. Geralmente escrevemos $f \colon A \to B$ para abreviar $f \in \Hom(A,B)$;
+        \item para cada $A \in \mathcal{C}$, um morfismo $\mathbb{1}_A \colon A \to A$ chamado de \defi{identidade} de $A$;
+        \item para cada $A, B, C \in \mathcal{C}$, $f \colon A \to B$ e $g \colon B \to C$, um morfismo $g \circ f \colon A \to C$ chamado de \defi{composição} de $g$ e $f$.
+    \end{itemize} Esses dados precisam satisfazer certas condições para que sua interação seja bem comportada: \begin{itemize}
+        \item para cada $A, B \in \mathcal{C}$, $f \colon A \to B$ e $g \colon B \to A$, \begin{equation}
+            \mathbb{1}_A \circ g = g \quad \text{e} \quad f \circ \mathbb{1}_A = f.
+        \end{equation} Essas igualdades são chamades de \defi{regras de identidade};
+        \item para cada $A, B, C, D \in \mathcal{C}$, $f \colon A \to B$, $g \colon B \to C$ e $h \colon C \to D$, \begin{equation}
+            h \circ (g \circ f) = (h \circ g) \circ f.
+        \end{equation} Essa igualdade é chamada de \defi{regra de associatividade}. Por conta dela, podemos ignorar os parênteses na hora de trabalhar com diversas composições em sequência.
+    \end{itemize}
+\end{definicao}
+
+O que faremos agora, é olhar para exemplos.
+
+\begin{exemplo}
+    A categoria $\cat{Set}$ possui, como objetos, todos os conjuntos. A classe $\Hom(X, Y)$ para conjuntos $X$ e $Y$ é o conjunto $Y^X$ das funções de $X$ em $Y$. A identidade em $X$ é a função identidade já conhecida de teoria dos conjuntos, e a composição de morfismos é a composição usual de funções.
+\end{exemplo}
+
+A categoria dos conjuntos é um bom exemplo para ilustrar a diferença entre as duas definições abaixo.
+
+\begin{definicao}
+    Diremos que uma categoria $\mathcal{C}$ é \defi{localmente pequena} se para cada $A, B \in \mathcal{C}$, a classe $\Hom(A,B)$ é um conjunto. Uma categoria $\mathcal{C}$ é \defi{pequena} se for localmente pequena e se a classe $\mathcal{C}$ for um conjunto.
+\end{definicao}
+
+Da teoria dos conjuntos, sabemos que é impossível formar um conjunto de todos os conjuntos. Para juntá-los em um só lugar precisamos da teoria de classes. Dessa forma, $\cat{Set}$ não é pequena. Porém, por definição, $\Hom(X,Y)$ é o \textit{conjunto} $Y^X$ das funções $X \to Y$, portanto $\cat{Set}$ é localmente pequena. Nos baseando em $\cat{Set}$, introduzimos a seguinte terminologia.
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria e $f \colon A \to B$, dizemos que $A$ é o \defi{domínio} de $f$ e $B$ é o \defi{contradomínio} de $f$. É impossível, sem avançar mais na teoria de categorias, definir o que seria a imagem de um morfismo, mas chegaremos lá.
+\end{definicao}
+
+Por mais que $\cat{Set}$ seja o primeiro exemplo de uma categoria que localmente pequena, mas não pequena, todas as categorias que ``derivam'' de $\cat{Set}$, isso é, cujos objetos são conjuntos com alguma estrutura a mais, e morfismos são funções que preservam tal estrutura, também são localmente pequenas mas não pequenas.
+
+\begin{exemplo}
+    A categoria $\cat{Top}$ possui, como objetos, todos os espaços topológicos. A classe $\Hom(T, S)$ para espaços $T$ e $S$ é o conjunto de todas as funções contínuas $T \to S$. As composições e as identidades funcionam da mesma forma que em $\cat{Set}$.
+\end{exemplo}
+
+\begin{exemplo}
+    A categoria $\cat{Grp}$ possui, como objetos, todos os grupos. A classe $\Hom(G, H)$ para grupos $G$ e $H$ é o conjunto de todos os morfismos de grupos $G \to H$. As composições e as identidades funcionam da mesma forma que em $\cat{Set}$.
+\end{exemplo}
+
+\begin{exemplo}
+    Dado um corpo $k$, a categoria $\cat{Vect}_k$ possui, como objetos, todos os espaços vetoriais sobre $k$. A classe $\Hom(V, W)$ para espaços $V$ e $W$ é o conjunto de todas as transformações lineares $V \to W$. As composições e as identidades funcionam da mesma forma que em $\cat{Set}$.
+\end{exemplo}
+
+\begin{exemplo}
+    A categoria $\cat{Rel}$ possui, como objetos, todos os conjuntos. A classe $\Hom(X,Y)$ para conjuntos $X$ e $Y$ é o conjunto de todas as relações entre $X$ e $Y$, ou seja, $\mathcal{P}(X \times Y)$. Se $R \subset X \times Y$ e $S \subset Y \times Z$, definimos \begin{equation}
+        S \circ R = \{(x,z) \in X \times Z \mid \text{ existe } y \in Y \text{ tal que } (x,y) \in R \text{ e } (y,z) \in S\}.
+    \end{equation} A identidade de $X \in \cat{Rel}$ é a função identidade $X \to X$ (funções são relações, já que a qualquer função corresponde o seu gráfico).
+\end{exemplo}
+
+\begin{exemplo}
+    Se $G$ é um grupo, podemos considerar a categora $\cat{G}$, que possui um único objeto, o grupo $G$, e para cada $g \in G$ corresponde o morfismo (na categoria $\cat{G}$, este não é de fato um morfismo de grupos) \begin{equation}
+        \begin{split}
+            g \colon G &\to G \\ h &\mapsto gh
+        \end{split}.
+    \end{equation} Note que a composição de dois mapas desse tipo é equivalente a multiplicar os respectivos elementos do grupo, portanto o conjunto $\Hom(G,G)$ nessa categoria possui uma estrutura de grupo isomorfa ao grupo $G$.
+\end{exemplo}
+
+\begin{exemplo}
+    Se $P$ é um conjunto parcialmente ordenado, isso é, com uma relação $\leq$ tal que \begin{equation}
+        x \leq x, \quad x \leq y \text{ e } y \leq x \implies x = y \quad \text{e} \quad x \leq y \text{ e } y \leq z \implies x \leq z,
+    \end{equation} então podemos considerar uma categora $\cat{P}$, cujos objetos são os elementos do conjunto $P$, e \begin{equation}
+        \Hom(x,y) = \begin{cases}
+            \{x\} \to \{y\}, &\text{se } x \leq y, \\ \varnothing &\text{caso contrário}.
+        \end{cases}
+    \end{equation} Note que as compostas sempre estão bem definidas pois se existem os mapas $\{x\} \to \{y\}$ e $\{y\} \to \{z\}$, então $x \leq y$ e $y \leq z$, portanto $x \leq z$ e está definido o mapa $\{x\} \to \{z\}$.
+\end{exemplo}
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria, diremos que $f \colon A \to B$ é um \defi{isomorfismo} se existe $g \colon B \to A$ tal que $f \circ g = \mathbb{1}_B$ e $g \circ f = \mathbb{1}_A$. Diremos que uma categoria $\mathcal{C}$ é um \defi{monóide} se possuir apenas um objeto, um \defi{grupóide} se todo morfismo for um isomorfismo,, e um \defi{grupo} se for um monóide e um grupóide.
+\end{definicao}
+
+Fica claro que um grupo (estrutura algébrica) da origem a um grupo (categoria). O ponto importante é que se $\mathcal{C}$ é um grupo com objeto $A$, então $\Hom(A,A)$ é um grupo no sentido algébrico.
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria, então $f \colon A \to B$ é um \defi{monomorfismo} se para quaisquer $C \in \mathcal{C}$ e $g, h \colon C \to A$, temos \begin{equation}
+        f \circ g = f \circ h \implies g = h.
+    \end{equation}
+\end{definicao}
+
+\begin{exemplo}
+    Para as categorias já estudadas, podemos identificar os monomorfismos e os isomorfismos: \begin{itemize}
+        \item na categoria $\cat{Set}$, os monomorfismos são as funções injetoras, e os isomorfismos são as bijeções;
+        \item na categoria $\cat{Top}$, os monomorfismos são as funções contínuas injetoras, e os isomorfismos são os homeomorfismos;
+        \item na categoria $\cat{Grp}$, os monomorfismos são os morfismos de grupos injetores, e os isomorfismos são os isomorfismos de grupos;
+        \item na categoria $\cat{Vect}_k$, os monomorfismos são as transformações lineares injetoras, e os isomorfismos são os isomorfismos lineares;
+        \item se $G$ é um grupo, na categoria $\cat{G}$ todos os morfismos são monomorfismos e isomorfismos;
+        \item se $P$ é um conjunto parcialmente ordenado, na categoria $\cat{P}$ todos os morfismos são monomorfismos e os isomorfismos são apenas as identidades.
+    \end{itemize}
+\end{exemplo}
+
+\begin{exercicio}
+    Quais os monomorfismos e os isomorfismos em $\cat{Rel}$?
+\end{exercicio}
+
+\section{Aula 02}
+
+Na aula passada, focamos na definição de categoria e fornecemos diversos exemplos de categorias. Como descobrimos, categorias possuem objetos e morfismos. Em muitos dos exemplos, os objetos eram outras estruturas matemáticas, e os morfismos eram funções preservando essa estrutura de alguma maneira. Essa é, de fato, uma das motivações por trás da definição de categoria: em muitas áreas da matemática, os principais resultados podem ser capturados como observações sobre estruturas matemáticas e suas transformações. Por tanto, é de se esperar que, ao definir uma estrutura matemática, acompanhada dessa definição venha também uma definição de como são as transformações entre essas estruturas.
+
+\begin{definicao}
+    Se $\mathcal{C}$ e $\mathcal{D}$ são duas categorias, um \defi{funtor covariante} $F \colon \mathcal{C} \to \mathcal{D}$ consiste em: \begin{itemize}
+        \item uma associação de um objeto $F(A) \in \mathcal{D}$ para cada objeto $A \in \mathcal{C}$;
+        \item uma associação de um morfismo $F(f) \colon F(A) \to F(B)$ em $\mathcal{D}$ para cada morfismo $f \colon A \to B$ em $\mathcal{C}$, de maneira que \begin{equation}
+            F(g \circ f) = F(g) \circ F(f) \quad \text{e} \quad \mathbb{1}_{F(A)} = F(\mathbb{1}_A)
+        \end{equation} para todos $A, B, C \in \mathcal{C}$, $f \colon A \to B$ e $g \colon B \to C$.
+    \end{itemize}
+\end{definicao}
+
+Utilizando categorias que introduzimos na aula passada, vamos agora olhar para alguns exemplos de funtores.
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria cujos objetos são conjuntos com estrutura adicional, e os morfismos são funções com propriedades adicionais, podemos construir o \defi{funtor esquecimento} \begin{equation}
+        F \colon \mathcal{C} \to \cat{Set}
+    \end{equation} dado por $F(X) = X$ e $F(f) = f$.
+\end{definicao}
+
+\begin{exemplo}
+    Podemos considerar o funtor esquecimento $\cat{Grp} \to \cat{Set}$, que pega um grupo $(G, \cdot)$ e leva no conjunto $G$, e que para cada morfismo de grupos $f \colon (G, \cdot) \to (H, *)$ associa a função de conjuntos $f \colon G \to H$.
+\end{exemplo}
+
+\begin{exemplo}
+    Podemos considerar o funtor esquecimento $\cat{Top} \to \cat{Set}$, que pega um espaço topológico $(X, \tau)$ e leva no conjunto $X$, e que para cada função contínua $f \colon (X, \tau) \to (Y, \lambda)$ associa a função de conjuntos $f \colon X \to Y$.
+\end{exemplo}
+
+\begin{exemplo}
+    Dado um corpo $k$, podemos considerar o funtor esquecimento $\cat{Vect}_k \to \cat{Set}$, que pega um espaço vetorial $(V, +, \cdot)$ e leva no conjunto $V$, e que para cada transformação linear $f \colon (V, +, \cdot) \to (W, +', \cdot')$ associa a função de conjuntos $f \colon V \to W$.
+\end{exemplo}
+
+\begin{exemplo}
+    Dados dois grupos $G$ e $H$, podemos considerar as categorias $\cat{G}$ e $\cat{H}$. Os funtores $\cat{G} \to \cat{H}$ estão em correspondência bijetiva com os morfismos de grupos $G \to H$.
+\end{exemplo}
+
+\begin{exemplo}
+    Dados dois conjuntos parcialmente ordenados $P$ e $O$, podemos considerar as categorias $\cat{P}$ e $\cat{O}$. Os funtores $\cat{P} \to \cat{O}$ estão em correspondência bijetiva com os as funções crescentes $P \to O$.
+\end{exemplo}
+
+Os últimos dois exemplos ilustram que, quando associamos, a uma estrutura matemática, uma categoria, a noção de funtor nos fornece a noção ``certa'' de transformação entre duas dessas estruturas. Assim como para mapas entre estruturas algébricas, existe a noção de composição de funtores.
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria o \defi{funtor identidade} é o funtor \begin{equation}
+        \mathbb{1}_{\mathcal{C}} \colon \mathcal{C} \to \mathcal{C}
+    \end{equation} que satisfaz \begin{equation}
+        \mathbb{1}_\mathcal{C}(A) = A \quad \text{e} \quad \mathbb{1}_\mathcal{C}(f) = f
+    \end{equation} para $A, B \in \mathcal{C}$ e $f \colon A \to B$.
+\end{definicao}
+
+\begin{definicao}
+    Dados dois funtores $F \colon \mathcal{C} \to \mathcal{D}$ e $G \colon \mathcal{D} \to \mathcal{E}$, podemos definir o \defi{funtor composição} $G \circ F \colon \mathcal{C} \to \mathcal{E}$ por \begin{equation}
+        (G \circ F)(A) = G(F(A)) \quad \text{e} \quad (G \circ F)(f) = G(F(f))
+    \end{equation} para $A, B \in \mathcal{C}$ e $f \colon A \to B$. Note que \begin{equation}
+        F \circ \mathbb{1}_{\mathcal{C}} = F \quad \text{e} \quad \mathbb{1}_\mathcal{D} \circ F = F
+    \end{equation} e, além disso, a composição de funtores é associativa.
+\end{definicao}
+
+As definições acima, junto com as observações sobre o funcionamento da composição de funtores, nos leva a acreditar que possa existir uma categoria de todas as categorias. O problema, é que por mais que classes pareçam objetos completamente livres das amarras formais em que conjuntos estão presos (ZFC), não é bem assim. Em teoria de classes, não é permitido que elementos de classes sejam outras classes, e portanto considerar a categoria das categorias faria com que a sua classe de objetos tivesse como objetos, outras classes.
+
+\begin{exemplo}
+    A categoria $\cat{Cat}$ possui, como objetos, as categorias pequenas, e como morfismos, os funtores. Note que essa categoria se torna localmente pequena pois todo funtor é uma função entre os conjuntos de objetos que satisfaz propriedades adicionais.
+\end{exemplo}
+
+Note que essa decisão de não permitir que categorias possuam, como objetos, outras classes, evita problemas como alguma versão do paradoxo de Russell para classes (a categoria de todas as categorias é um objeto de si mesma? Note que esse problema não aparece ao considerarmos $\cat{Cat}$ pois $\cat{Cat}$ não é pequena e portanto não pode ser um elemento de si mesma).
+
+É importante dizer que, por mais que a categoria de todas as categorias não existe, isso não invalida de qualquer maneira a busca por estrutura em classes de categorias não pequenas: estudar funtores entre categorias grandes e transformações entre esses funtores (que veremos na aula que vem) continua sendo um trabalho bastante frutífero.
+
+Até agora, categorias foram apresentadas em dois diferentes sabores: existem categorias que, de alguma maneira, representam alguma área da matemática, como $\cat{Set}$, $\cat{Grp}$, $\cat{Top}$, $\cat{Vect}_k$, $\cat{Rel}$ e outros exemplos que ainda não vimos, e existem categorias que são ``categorificações'' de estruturas matemáticas, como categorias que nascem a partir de um grupo, um monóide, um grupóide ou um conjunto parcialmente ordenado. O próximo passo é introduzir um novo sabor para a nossa sorveteria de categorias: as categorias que nascem através de construções categóricas.
+
+\begin{definicao}
+    Se $\mathcal{C}$ é uma categoria, a \defi{categoria oposta} é a categoria $\mathcal{C}^{op}$ que possui os mesmos objetos de $\mathcal{C}$, mas que satisfaz, para cada $A, B \in \mathcal{C}^{op}$, \begin{equation*}
+        \Hom_{\mathcal{C}^{op}}(A,B) = \Hom_{\mathcal{C}}(B,A).
+    \end{equation*} Isso significa que um morfismo $f \colon B \to A$ em $\mathcal{C}$ corresponde a um, e somente um, morfismo $f^{op} \colon A \to B$ em $\mathcal{C}^{op}$. A composição e a identidade são definidas de maneira óbvia.
+\end{definicao}
+
+É importante notar que funtores $\mathcal{C} \to \mathcal{D}$ estão em correspondência bijetiva com funtores $\mathcal{C}^{op} \to \mathcal{D}^{op}$. Como $(\mathcal{C}^{op})^{op} = \mathcal{C}$, segue que funtores $\mathcal{C}^{op} \to \mathcal{D}$ estão em correspondência bijetiva com funtores $\mathcal{C} \to \mathcal{D}^{op}$. Isso motiva a próxima definição.
+
+\begin{definicao}
+    Um \defi{funtor contravariante} $F \colon \mathcal{C} \to \mathcal{D}$ é um funtor $F \colon \mathcal{C}^{op} \to \mathcal{D}$ ou, equivalentemente, um funtor $F \colon \mathcal{C} \to \mathcal{D}^{op}$. Os funtores que já conhecemos muitas vezes são chamados de funtores \defi{covariantes}.
+\end{definicao}
+
+\begin{exemplo}
+    Note que não podemos definir, da maneira óbvia, um funtor que leva um espaço vetorial em seu dual, já que se $T \colon V \to W$ é linear, então o mapa transposto é $T^* \colon W^* \to V^*$ dado por $T^*\phi = \phi \circ T$. Porém, com a noção de funtor contravariante, agora isso faz sentido.
+\end{exemplo}

@@ -1,20 +1,4 @@
-\newtcolorbox{demo}[1][]{%
-    enhanced,
-    skin first=enhanced,
-    skin middle=enhanced,
-    skin last=enhanced,
-    breakable,
-    before upper={{\color{cor5} \textit{\textbf{Demonstração.}}\quad} \color{black}},
-    boxrule = 0pt,
-    colback = white,
-    frame hidden,
-    borderline west = {4pt}{0pt}{cor5},
-    before skip = 15pt,
-    after skip = 15pt,
-    parbox = false
-}
-
-\newtcolorbox{prop}[1][]{%
+\newtcolorbox{definicao}[1][]{%
     enhanced,
     skin first=enhanced,
     skin middle=enhanced,
@@ -25,7 +9,7 @@
     colframe = cor1,
     coltitle = cor2,
     sharp corners,
-    title = {\bfseries\large Proposição \stepcounter{princount}\theprincount\phantom{ }#1},
+    title = {\bfseries\large Definição \stepcounter{princount}\theprincount\phantom{ }#1},
     before skip = 15pt,
     after skip = 15pt
 }
@@ -47,6 +31,40 @@
     after skip = 15pt
 }
 
+\newtcolorbox{demoteo}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor3} \textit{\textbf{Demonstração.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor3},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
+\newtcolorbox{demoteoi}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor3} \textit{\textbf{Demonstração #1.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor3},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
 \newtcolorbox{cor}[1][]{%
     enhanced,
     skin first=enhanced,
@@ -63,6 +81,40 @@
     after skip = 15pt
 }
 
+\newtcolorbox{democor}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor4} \textit{\textbf{Demonstração.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor4},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
+\newtcolorbox{democori}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor4} \textit{\textbf{Demonstração #1.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor4},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
 \newtcolorbox{lema}[1][]{%
     enhanced,
     skin first=enhanced,
@@ -77,6 +129,40 @@
     title = {\bfseries\large Lema \stepcounter{princount}\theprincount\phantom{ }#1},
     before skip = 15pt,
     after skip = 15pt
+}
+
+\newtcolorbox{demolema}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor5} \textit{\textbf{Demonstração.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
+\newtcolorbox{demolemai}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor5} \textit{\textbf{Demonstração #1.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
 }
 
 \newtcolorbox{exemplo}[1][]{%
@@ -113,10 +199,36 @@
     after skip = 15pt
 }
 
-\newlist{itens}{enumerate}{1}
-\setlist[itens,1]{
-    labelsep = 0 cm,
-    leftmargin = 0 cm,
-    itemindent = 0.85 cm,
-    label = {\fontsize{12}{12}\selectfont\bfseries(\alph*)\phantom{..}}
+\newtcolorbox{resposta}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{black} \textit{\textbf{Resposta.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{black},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
+}
+
+\newtcolorbox{respostai}[1][]{%
+    enhanced,
+    skin first=enhanced,
+    skin middle=enhanced,
+    skin last=enhanced,
+    breakable,
+    before upper={{\color{cor5} \textit{\textbf{Resposta #1.}}\quad} \color{black}},
+    boxrule = 0pt,
+    colback = white,
+    frame hidden,
+    borderline west = {4pt}{0pt}{cor5},
+    before skip = 15pt,
+    after skip = 15pt,
+    parbox = false,
+    after upper = {\qed}
 }
